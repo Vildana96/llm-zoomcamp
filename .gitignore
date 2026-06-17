@@ -3,4 +3,4 @@
 __pycache__/
 *.db
 models/
-pyproject.toml
+*.lock
