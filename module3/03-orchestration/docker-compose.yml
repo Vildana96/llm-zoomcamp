@@ -62,7 +62,7 @@ services:
             type: gemini
             gemini:
               model-name: gemini-2.5-flash
-              api-key: ${SECRET_GEMINI_API_KEY}
+              api-key: ${GEMINI_API_KEY}
     ports:
       - "8080:8080"
       - "8081:8081"
