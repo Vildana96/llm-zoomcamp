@@ -1,5 +1,5 @@
 import time
-from tqdm.auto import tqdm
+from tqdm import tqdm
 from module1.rag_helper import RAGBase
 
 
