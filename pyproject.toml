@@ -19,3 +19,8 @@ dependencies = [
     "toyaikit>=0.0.11",
     "tqdm>=4.68.3",
 ]
+
+[tool.uv.workspace]
+members = [
+    "noworkspace",
+]
