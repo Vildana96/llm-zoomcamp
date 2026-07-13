@@ -3,6 +3,7 @@ from assistant import create_assistant
 from db_save import save_conversation
 
 assistant = create_assistant()
+print("Assistant created successfully")
 
 st.title("Course Assistant")
 
@@ -11,6 +12,7 @@ user_input = st.text_input("Enter your question:")
 if st.button("Ask"):
     with st.spinner("Processing..."):
         answer = assistant.rag(user_input)
+        print(f"Answer: {answer}")
         st.success("Completed!")
         st.write(answer)
 

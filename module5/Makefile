@@ -4,7 +4,7 @@ run:
 chat:
 	uv run streamlit run app.py
 
-network:
+network: 
 	docker network create monitoring
 
 postgres: network
