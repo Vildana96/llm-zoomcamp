@@ -20,6 +20,7 @@ def save_feedback(conversation_id, source, relevance=None,
                 (conversation_id, source, relevance,
                  explanation, score, timestamp),
             )
+            print(f"Feedback saved")
         conn.commit()
     finally:
         conn.close()

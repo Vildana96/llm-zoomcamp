@@ -34,6 +34,7 @@ def save_conversation(record, question, course):
                 ),
             )
             conversation_id = cur.fetchone()[0]
+            print(f"Conversation saved with ID: {conversation_id}")
         conn.commit()
     finally:
         conn.close()
