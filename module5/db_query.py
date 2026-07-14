@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from db_init import get_db_connection
-from metrics import LLMCallRecord
+from metrics import LLMCallRecord, Stats
 
 def row_to_record(row):
     return LLMCallRecord(
@@ -38,6 +38,29 @@ def get_conversations(limit=10):
         conn.close()
 
     return [row_to_record(row) for row in rows]
+
+def get_stats():
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT
+                    COUNT(*),
+                    AVG(response_time),
+                    SUM(cost),
+                    AVG(total_tokens)
+                FROM conversations
+            """)
+            row = cur.fetchone()
+    finally:
+        conn.close()
+
+    return Stats(
+        total=row[0],
+        avg_response_time=row[1],
+        total_cost=row[2],
+        avg_tokens=row[3],
+    )
 
 
 if __name__ == "__main__":

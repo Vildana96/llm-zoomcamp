@@ -17,6 +17,14 @@ class LLMCallRecord:
     cost: float
     timestamp: datetime = field(default_factory=datetime.now)
 
+@dataclass
+class Stats:
+    total: int
+    avg_response_time: float
+    total_cost: float
+    avg_tokens: float
+    
+
 def calculate_cost(model, usage):
     cost = 0
     if "gpt-5.4-mini" in model:
