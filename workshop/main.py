@@ -27,12 +27,6 @@ def main():
     usage = result.usage
     print(usage)
 
-    # print(f"Request tokens: {usage.request_tokens}")
-    # print(f"Response tokens: {usage.response_tokens}")
-    # print(f"Total tokens: {usage.total_tokens}")
-
-
-
 
 if __name__ == '__main__':
     main()
